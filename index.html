@@ -2,33 +2,76 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>지도 생성하기</title>
-
-    <style>
-      #map {
-        margin: 0 auto;
-        width: 400px;
-        height: 400px;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- 지도를 표시할 div 입니다 -->
-    <div id="map" style="width: 100%; height: 350px"></div>
-
+    <title>카카오 지도 경로 예제</title>
     <script
       type="text/javascript"
-      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9c9fb588b9138bcbd0cd56120ecc523d"
+      src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=9c9fb588b9138bcbd0cd56120ecc523d&libraries=services"
     ></script>
     <script>
-      var mapContainer = document.getElementById("map"), // 지도를 표시할 div
-        mapOption = {
-          center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-          level: 3, // 지도의 확대 레벨
-        };
+      var map;
 
-      // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-      var map = new kakao.maps.Map(mapContainer, mapOption);
+      function initialize() {
+        map = new kakao.maps.Map(document.getElementById("map"), {
+          center: new kakao.maps.LatLng(34.7465, 127.7329), // 이순신광장 기준으로 중앙 설정
+          level: 12,
+        });
+
+        // 각 장소의 이름과 좌표
+        var places = [
+          {
+            name: "디오션리조트 체크인",
+            latLng: new kakao.maps.LatLng(34.7397, 127.669),
+          },
+          { name: "선소", latLng: new kakao.maps.LatLng(34.7592, 127.7223) },
+          {
+            name: "이충무공자당기거지",
+            latLng: new kakao.maps.LatLng(34.7512, 127.7306),
+          },
+          { name: "진남관", latLng: new kakao.maps.LatLng(34.7542, 127.7322) },
+          {
+            name: "이순신광장",
+            latLng: new kakao.maps.LatLng(34.7465, 127.7329),
+          },
+          {
+            name: "고소동천사벽화골목",
+            latLng: new kakao.maps.LatLng(34.7489, 127.7432),
+          },
+        ];
+
+        // 경로 설정 (각 지점의 좌표)
+        var path = places.map(function (place) {
+          return place.latLng;
+        });
+
+        var polyline = new kakao.maps.Polyline({
+          path: path, // 경로
+          strokeWeight: 5,
+          strokeColor: "#FF0000",
+          strokeOpacity: 1,
+          strokeStyle: "solid",
+        });
+        polyline.setMap(map);
+
+        // 각 마커와 정보창 생성
+        places.forEach(function (place) {
+          var marker = new kakao.maps.Marker({
+            position: place.latLng,
+          });
+          marker.setMap(map);
+
+          var infowindow = new kakao.maps.InfoWindow({
+            content: '<div style="padding:5px;">' + place.name + "</div>",
+          });
+
+          // 마커 위에 바로 정보창이 뜨도록 설정
+          infowindow.open(map, marker);
+        });
+      }
+
+      window.onload = initialize;
     </script>
+  </head>
+  <body>
+    <div id="map" style="width: 100%; height: 500px"></div>
   </body>
 </html>
