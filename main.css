@@ -1,0 +1,29 @@
+.custom-link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+/* Swiper 전체 컨테이너 */
+.mySwiper {
+  width: 80%;
+  height: 700px;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  top: -100px; /* Swiper를 위로 이동 */
+  left: 70px;
+}
+
+/* 각 슬라이드 */
+.mySwiper .swiper-slide {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 이미지 크기 */
+.mySwiper .swiper-slide img {
+  width: 50%;
+  height: 70%;
+}
