@@ -2,6 +2,11 @@
   text-decoration: none;
   color: black;
   font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: auto;
 }
 
 /* Swiper 전체 컨테이너 */
@@ -26,4 +31,98 @@
 .mySwiper .swiper-slide img {
   width: 50%;
   height: 70%;
+}
+
+/*메인 화면*/
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(100vh - 80px);
+}
+
+.left {
+  width: 60%;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.text h5 {
+  color: #55682f;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.text h2 {
+  color: #884513;
+  font-size: 2rem;
+}
+
+.text p {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* 오른쪽 이미지 */
+.right {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.right img {
+  max-width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  background-color: #fffff0;
+  font-family: "Nanum Gothic", sans-serif;
+  color: #333;
+  margin: 0;
+}
+
+/*상단 메뉴바*/
+
+.menubar {
+  width: 500%;
+  display: flex;
+  justify-content: center;
+}
+
+.menubar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.menubar ul li a {
+  font-weight: bold;
+  color: #884513;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+.menubar ul li a:hover {
+  color: #884513;
+}
+
+.center-nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 18px;
 }
