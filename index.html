@@ -9,10 +9,10 @@
     ></script>
     <script>
       var map;
-      var infowindow; // 전역으로 선언해서 재사용
+      var infowindow;
+      var currentMarker = null;
 
       function initialize() {
-        // 지도 기본 생성
         map = new kakao.maps.Map(document.getElementById("map"), {
           center: new kakao.maps.LatLng(34.7465, 127.7329),
           level: 12,
@@ -53,14 +53,12 @@
           },
         ];
 
-        // 마커 전체 포함하는 경계 생성
         var bounds = new kakao.maps.LatLngBounds();
         places.forEach(function (place) {
           bounds.extend(place.latLng);
         });
-        map.setBounds(bounds); // 확대/이동 자동 설정
+        map.setBounds(bounds);
 
-        // 경로 선 표시
         var path = places.map(function (place) {
           return place.latLng;
         });
@@ -74,7 +72,6 @@
         });
         polyline.setMap(map);
 
-        // 마커 + 클릭 이벤트 설정
         places.forEach(function (place) {
           var marker = new kakao.maps.Marker({
             position: place.latLng,
@@ -82,21 +79,32 @@
           });
 
           kakao.maps.event.addListener(marker, "click", function () {
-            var content =
-              '<div style="padding:10px; width:250px; height:300px;">' +
-              "<strong>" +
-              place.name +
-              "</strong><br>" +
-              '<img src="' +
-              place.img +
-              '" style="width:100%; height:auto; max-height:150px; margin-top:5px;"><br>' +
-              "<p style='margin-top:5px;'>" +
-              place.desc +
-              "</p></div>";
+            if (infowindow.getMap() && currentMarker === marker) {
+              infowindow.close();
+              currentMarker = null;
+            } else {
+              var content =
+                '<div style="padding:10px; width:250px; height:300px;">' +
+                "<strong>" +
+                place.name +
+                "</strong><br>" +
+                '<img src="' +
+                place.img +
+                '" style="width:100%; height:auto; max-height:150px; margin-top:5px;"><br>' +
+                "<p style='margin-top:5px;'>" +
+                place.desc +
+                "</p></div>";
 
-            infowindow.setContent(content);
-            infowindow.open(map, marker);
+              infowindow.setContent(content);
+              infowindow.open(map, marker);
+              currentMarker = marker;
+            }
           });
+        });
+
+        kakao.maps.event.addListener(map, "click", function () {
+          infowindow.close();
+          currentMarker = null;
         });
       }
 
