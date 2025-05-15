@@ -1,0 +1,55 @@
+/*로그인, 회원가입*/
+.signButton > button {
+  margin: 5px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background-color: #fffff0;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.signButton > button:hover {
+  background-color: #884513;
+}
+
+.login-wrapper {
+  width: 400px;
+  padding: 60px;
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-wrapper > h2 {
+  font-size: 24px;
+  color: #884513;
+  margin-bottom: 20px;
+}
+
+#login-form > input {
+  width: 100%;
+  height: 48px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  background-color: #f8f8f8;
+}
+#login-form > input::placeholder {
+  color: #d2d2d2;
+}
+#login-form > input[type="submit"] {
+  color: #fff;
+  font-size: 16px;
+  background-color: #884513;
+  margin-top: 15px;
+}

@@ -16,7 +16,7 @@
   aspect-ratio: 16 / 9;
   position: relative;
   top: -100px; /* Swiper를 위로 이동 */
-  left: 70px;
+  left: 50px;
 }
 
 /* 각 슬라이드 */
