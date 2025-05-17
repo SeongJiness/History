@@ -9,30 +9,6 @@
   width: auto;
 }
 
-/* Swiper 전체 컨테이너 */
-.mySwiper {
-  width: 80%;
-  height: 700px;
-  aspect-ratio: 16 / 9;
-  position: relative;
-  top: -100px; /* Swiper를 위로 이동 */
-  left: 50px;
-}
-
-/* 각 슬라이드 */
-.mySwiper .swiper-slide {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* 이미지 크기 */
-.mySwiper .swiper-slide img {
-  width: 50%;
-  height: 70%;
-}
-
 /*메인 화면*/
 
 .container {
@@ -71,27 +47,12 @@
   font-size: 16px;
 }
 
-/* 오른쪽 이미지 */
-.right {
-  width: 80%;
-  display: flex;
-  justify-content: center;
-}
-
-.right img {
-  max-width: 90%;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
 body {
   background-color: #fffff0;
   font-family: "Nanum Gothic", sans-serif;
   color: #333;
   margin: 0;
-}
-
-/*상단 메뉴바*/
+} /*상단 메뉴바*/
 
 .menubar {
   width: 500%;
@@ -127,6 +88,85 @@ body {
   font-size: 18px;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+  background-color: #fffff0;
+}
+
+.menu-container {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  height: 100vh;
+  width: 200px;
+  background-color: white;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  padding-left: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+}
+
+.menu-container.open {
+  transform: translateX(0);
+}
+
+.arrow-button {
+  position: fixed;
+  top: 50%;
+  left: 20px; /* 전체가 보이도록 조정 */
+  transform: translate(-60%, -50%);
+  width: 35px;
+  height: 35px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: black;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+  transition: left 0.3s ease, transform 0.3s ease;
+}
+
+.menu-container.open + .arrow-button {
+  left: 200px;
+  transform: translate(-40%, -50%) rotate(180deg);
+}
+
+.menu-title {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 20px 0;
+  color: #5a3b3b;
+}
+
+.menu-item {
+  display: block;
+  padding: 10px 0;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.menu-item:hover {
+  background-color: #ddd;
+}
+
+a {
+  text-decoration: none;
+}
+
 .btn-custom {
   background-color: #c56a00; /* 주황색 계열 */
   color: white;
@@ -134,5 +174,4 @@ body {
   padding: 10px 30px;
   font-weight: bold;
   border: none;
-  text-decoration: none;
 }
