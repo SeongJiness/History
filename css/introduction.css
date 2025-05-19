@@ -1,0 +1,133 @@
+/* 전체 세로 100% flex 컨테이너 */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: "Nanum Gothic", sans-serif;
+  background-color: #fffff0;
+  color: #333;
+  position: relative;
+}
+
+/* 배경 이미지 및 중앙 텍스트 */
+.background-half {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80vh;
+  background-image: url("https://i.pinimg.com/1200x/1b/a7/c5/1ba7c5cd883e9da0dee53133e40bad2b.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 세로 중앙 정렬 */
+  align-items: center; /* 가로 중앙 정렬 */
+  text-align: center;
+  color: black;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.background-text h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.background-text p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* 메인 컨텐츠 영역: flex-grow */
+#content {
+  flex: 1 0 auto;
+}
+
+/* 상단 메뉴바 */
+.d-flex.align-items-center.gap-3.px-3.py-2 {
+  background-color: #fffff0;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.custom-link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: auto;
+}
+
+.menubar {
+  display: flex;
+  justify-content: center;
+}
+
+.menubar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.menubar ul li a {
+  font-weight: bold;
+  color: #884513;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+.menubar ul li a:hover {
+  color: #884513;
+}
+
+.center-nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 18px;
+}
+
+.input-group {
+  width: 300px;
+}
+
+/* 회원가입, 로그인 버튼 디자인 */
+.btn-custom {
+  background-color: #c56a00; /* 주황색 계열 */
+  color: white;
+  border-radius: 30px; /* 둥근 모서리 */
+  padding: 10px 30px;
+  font-weight: bold;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-custom:hover {
+  background-color: #a35400;
+}
+
+/* 푸터: 화면 아래 고정 및 flex-shrink 방지 */
+footer {
+  flex-shrink: 0;
+}
