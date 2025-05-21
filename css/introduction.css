@@ -1,31 +1,24 @@
-/* 전체 세로 100% flex 컨테이너 */
 html,
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
   font-family: "Nanum Gothic", sans-serif;
   background-color: #fffff0;
   color: #333;
   position: relative;
 }
 
-/* 배경 이미지 및 중앙 텍스트 */
-.background-half {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80vh;
+/* 첫번째 배경 이미지 및 중앙 텍스트 */
+
+.background-image1 {
+  position: relative; /* fixed -> relative */
+  height: 100vh;
   background-image: url("https://i.pinimg.com/1200x/1b/a7/c5/1ba7c5cd883e9da0dee53133e40bad2b.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   z-index: 0;
-
   display: flex;
   flex-direction: column;
   justify-content: center; /* 세로 중앙 정렬 */
@@ -43,6 +36,186 @@ body {
 .background-text p {
   font-size: 1.2rem;
   margin-top: 10px;
+}
+
+/*두번째 배경이미지*/
+.background-image2 {
+  position: relative;
+  height: 40vh;
+  background-image: url("https://previews.123rf.com/images/takasumi/takasumi1510/takasumi151000972/46973534-%EA%B3%A0%EB%8C%80%EC%A7%80%EB%8F%84%EC%99%80-%EB%82%98%EC%B9%A8%EB%B0%98.jpg");
+  margin-top: -5px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* 가로축 왼쪽 정렬 */
+  padding-left: 60px; /* 왼쪽 여백 추가 */
+  text-align: left;
+  color: black;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  /* 배경색 투명도 조절 */
+  background-color: rgba(255, 255, 255, 0.25); /* 더 투명하게 */
+
+  /* 블렌드 모드 조절 */
+  background-blend-mode: overlay; /* lighten, overlay, screen 중 선택 */
+
+  /* 배경 이미지가 꽉 차게 */
+  background-size: cover;
+  background-position: center;
+}
+
+.history-overlay {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  margin-left: 50px; /* 필요 시 조정 (ex: 20~100px) */
+}
+
+.line {
+  width: 450px;
+  height: 2px;
+  background-color: black;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.history-text {
+  font-size: 40px;
+  font-weight: 900;
+  color: black;
+}
+
+/*History 이미지 아래 텍스트 영역*/
+.intro-text {
+  text-align: center;
+  padding: 100px 20px; /* 위아래 여백 */
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.8;
+  color: #111;
+}
+
+/*세번째 배경이미지*/
+.background-image3 {
+  position: relative;
+  height: 40vh;
+  background-image: url("https://img.freepik.com/premium-photo/group-asian-generation-z-people-friends-looking-beautiful-nature-countryside-forest-mountain-man-woman-friendship-enjoy-fun-outdoor-lifestyle-road-trip-summer-holiday-vacation_1411861-4098.jpg?semt=ais_hybrid&w=740");
+  margin-top: -5px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 60px;
+  text-align: left;
+  color: black;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+
+  /* 배경색 투명도 조절 */
+  background-color: rgba(255, 255, 255, 0.25); /* 더 투명하게 */
+
+  /* 블렌드 모드 조절 */
+  background-blend-mode: overlay; /* lighten, overlay, screen 중 선택 */
+
+  /* 배경 이미지가 꽉 차게 */
+  background-size: cover;
+  background-position: center;
+}
+
+.journey-overlay {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  margin-left: 50px; /* 필요 시 조정 (ex: 20~100px) */
+}
+
+.line {
+  width: 450px;
+  height: 2px;
+  background-color: black;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.journey-text {
+  font-size: 40px;
+  font-weight: 900;
+  color: black;
+}
+
+/*네번째 배경이미지*/
+.background-image4 {
+  position: relative;
+  height: 40vh;
+  background-image: url("https://www.womansense.co.kr/upload/NPFILE/202304/512094.jpg");
+  margin-top: -5px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 60px;
+  text-align: left;
+  color: black;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+
+  /* 배경색 투명도 조절 */
+  background-color: rgba(255, 255, 255, 0.25); /* 더 투명하게 */
+
+  /* 블렌드 모드 조절 */
+  background-blend-mode: overlay; /* lighten, overlay, screen 중 선택 */
+
+  /* 배경 이미지가 꽉 차게 */
+  background-size: cover;
+  background-position: center;
+}
+
+.footprint-overlay {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  margin-left: 50px; /* 필요 시 조정 (ex: 20~100px) */
+}
+
+.line {
+  width: 450px;
+  height: 2px;
+  background-color: black;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.footprint-text {
+  font-size: 40px;
+  font-weight: 900;
+  color: black;
 }
 
 /* 메인 컨텐츠 영역: flex-grow */
