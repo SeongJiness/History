@@ -1,74 +1,49 @@
-// 카카오지도 API 자바스크립트
 var map;
 var infowindow;
 var currentMarker = null;
 var markers = [];
 
-// 유관순 관련 장소들
-const youPlaces = [
+// 서울 지역 역사적 장소
+const seoulPlaces = [
   {
-    name: "독립기념관",
-    latLng: new kakao.maps.LatLng(36.781872, 127.2303981),
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Independence_Hall_of_Korea_01.JPG/1200px-Independence_Hall_of_Korea_01.JPG",
-    desc: "한국 독립운동의 역사를 전시한 대표 기념관입니다.",
+    name: "경복궁",
+    latLng: new kakao.maps.LatLng(37.579617, 126.977041),
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Gyeongbokgung_Geunjeongjeon_2.jpg/1200px-Gyeongbokgung_Geunjeongjeon_2.jpg",
+    desc: "조선 시대의 법궁으로 서울의 대표적인 고궁입니다.",
   },
   {
-    name: "이동녕 선생 생가지",
-    latLng: new kakao.maps.LatLng(36.7795, 127.228),
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4JmvFaHezpOndvXEdEQllw3yCYi0LW8Lomw&s",
-    desc: "대한민국 임시정부 의정원장을 지낸 이동녕 선생의 생가입니다.",
+    name: "서대문형무소역사관",
+    latLng: new kakao.maps.LatLng(37.5745, 126.9575),
+    img: "https://www.sscmc.or.kr/resources/contents/image/04.jpg",
+    desc: "일제강점기 독립운동가들이 수감되었던 역사적인 장소입니다.",
   },
   {
-    name: "아우내장터",
-    latLng: new kakao.maps.LatLng(36.776, 127.281),
-    img: "https://www.gospeltoday.co.kr/news/photo/201902/3167_6645_4450.jpg",
-    desc: "1919년 3·1운동 당시 유관순 열사가 만세운동을 펼친 장소입니다.",
-  },
-  {
-    name: "조병옥 박사 생가",
-    latLng: new kakao.maps.LatLng(36.775, 127.275),
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRooopt2o0sBbmsZV4rLr16z0knj7m2hUcmGA&s",
-    desc: "민주주의 발전에 기여한 조병옥 박사의 생가입니다.",
-  },
-  {
-    name: "천안 유관순 열사 유적",
-    latLng: new kakao.maps.LatLng(36.774, 127.28),
-    img: "https://cheonan.grandculture.net/Image?localName=cheonan&id=GC045P01224&t=middle",
-    desc: "유관순 열사의 생가와 기념관이 있는 유적지입니다.",
+    name: "탑골공원",
+    latLng: new kakao.maps.LatLng(37.5704, 126.9895),
+    img: "https://upload.wikimedia.org/wikipedia/commons/0/02/Tapgol_Park.jpg",
+    desc: "3.1 운동의 발상지로서 역사적 가치가 높은 공원입니다.",
   },
 ];
 
-// 이순신 관련 장소들
-const leePlaces = [
+// 대구 지역 역사적 장소
+const daeguPlaces = [
   {
-    name: "선소",
-    latLng: new kakao.maps.LatLng(34.7592, 127.7223),
-    img: "https://minio.nculture.org/amsweb-opt/multimedia_assets/31/85987/95269/c/%EC%97%AC%EC%88%98-%EC%84%A0%EC%86%8C%EC%9C%A0%EC%A0%81_%EB%B6%80%EC%82%B0%EC%A7%84%EC%88%9C%EC%A0%88%EB%8F%842_%EB%AC%B8%ED%99%94%EC%9E%AC%EC%B2%AD_%EC%A0%9C1%EC%9C%A0%ED%98%95-medium-size.jpg",
-    desc: "조선시대 군선과 어선을 만들던 곳으로, 역사적인 배 제조 장소입니다.",
+    name: "국채보상운동기념공원",
+    latLng: new kakao.maps.LatLng(35.8698, 128.5937),
+    img: "https://www.daegu.go.kr/u/culture/bbs/view.do?ptIdx=322&mId=0201020000&idx=265155&searchCategory=&page=1",
+    desc: "1907년 국채보상운동이 시작된 장소로 민족 자주정신을 기리는 공원입니다.",
   },
   {
-    name: "이충무공자당기거지",
-    latLng: new kakao.maps.LatLng(34.7512, 127.7306),
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgfPerM4B9CACJ0h2QOo9K1oHYUoYuj_XaJQ&s",
-    desc: "이순신 장군의 가족이 살던 옛집으로 역사적인 의미가 깊습니다.",
+    name: "계산성당",
+    latLng: new kakao.maps.LatLng(35.8692, 128.5947),
+    img: "https://upload.wikimedia.org/wikipedia/commons/1/18/Daegu_Kyesan_Cathedral_Church.jpg",
+    desc: "대구에서 가장 오래된 고딕양식 성당으로 1902년 완공되었습니다.",
   },
   {
-    name: "진남관",
-    latLng: new kakao.maps.LatLng(34.7542, 127.7322),
-    img: "https://lh5.googleusercontent.com/proxy/mKMMukQIt03gZriA98aHrVQstZy03tsmwl1s74xpumlfl8fY1A3cPrrk3j5ArHjTZQ1UFJO32NRW7_YYkvq67oZZT1LyhnohDOlKcZ28cpv1vg6jilr2lPdFI6iQ0yJ-R-M",
-    desc: "전라좌수영의 중심지였던 조선시대 건축물입니다.",
-  },
-  {
-    name: "이순신광장",
-    latLng: new kakao.maps.LatLng(34.7465, 127.7329),
-    img: "https://mblogthumb-phinf.pstatic.net/MjAyMzA5MTNfMTA2/MDAxNjk0NTk3NDEyOTQ3.6Fe7mVk0Z65bd8kOp8tZ9htaPWh2nmvlo51SX3xLM30g.qnkQ7DQ1nJo7pURNIBjI4SeJSyibxr1xITBeMxQCoxsg.JPEG.suk4408/061A8464.jpg?type=w800",
-    desc: "이순신 장군을 기리는 동상이 있는 광장으로 관광 명소입니다.",
-  },
-  {
-    name: "고소동천사벽화골목",
-    latLng: new kakao.maps.LatLng(34.7489, 127.7432),
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6IrmSDE50rTZ1yQSmG_O4byAX_CfbcSY2jw&s",
-    desc: "형형색색의 벽화가 있는 골목으로 사진 찍기 좋은 장소입니다.",
+    name: "3.1만세운동길",
+    latLng: new kakao.maps.LatLng(35.8757, 128.5956),
+    img: "https://www.daegu.go.kr/u/culture/bbs/view.do?ptIdx=322&mId=0201020000&idx=265168&searchCategory=&page=1",
+    desc: "대구에서 3.1 운동이 전개된 거리로 조형물과 안내판이 있습니다.",
   },
 ];
 
@@ -123,8 +98,6 @@ function addMarkers(places) {
     markers.push(marker);
   });
 
-  map.setBounds(bounds);
-
   window.polyline = new kakao.maps.Polyline({
     path: path,
     strokeWeight: 5,
@@ -138,22 +111,28 @@ function addMarkers(places) {
 function loadMap(type) {
   clearMarkers();
 
-  if (type === "you") {
-    addMarkers(youPlaces);
-  } else if (type === "lee") {
-    addMarkers(leePlaces);
+  if (type === "seoul") {
+    map.setCenter(new kakao.maps.LatLng(37.5665, 126.978)); // 서울 시청 근처
+    map.setLevel(11); // 서울 전역이 적당히 보임
+    addMarkers(seoulPlaces);
+  } else if (type === "daegu") {
+    map.setCenter(new kakao.maps.LatLng(35.8714, 128.6014)); // 대구 중심
+    map.setLevel(11); // 대구 전역이 적당히 보임
+    addMarkers(daeguPlaces);
+  } else {
+    console.warn("지원하지 않는 지역입니다.");
   }
 }
 
 function initialize() {
   map = new kakao.maps.Map(document.getElementById("map"), {
-    center: new kakao.maps.LatLng(36.774, 127.28),
-    level: 12,
+    center: new kakao.maps.LatLng(37.5665, 126.978), // 기본 서울 중심
+    level: 11,
   });
   infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
 
-  // 기본 지도는 유관순
-  loadMap("you");
+  // 기본 지도는 서울
+  loadMap("seoul");
 }
 
 window.onload = initialize;
