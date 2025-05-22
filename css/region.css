@@ -97,6 +97,7 @@ body {
   background-color: #fffff0;
 }
 
+/* ===== 사이드 메뉴 (토글 메뉴) ===== */
 .menu-container {
   position: fixed;
   top: 50px;

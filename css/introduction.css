@@ -1,3 +1,4 @@
+/*html, body 영역 전체 적용*/
 html,
 body {
   margin: 0;
@@ -28,6 +29,7 @@ body {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
+/*첫번쨰 배경이미지 텍스트 디자인*/
 .background-text h1 {
   font-size: 3rem;
   margin: 0;
@@ -64,6 +66,7 @@ body {
   background-position: center;
 }
 
+/*두번째 배경이미지 위 텍스트 디자인*/
 .history-overlay {
   position: relative;
   width: 100%;
@@ -74,12 +77,14 @@ body {
   margin-left: 50px; /* 필요 시 조정 (ex: 20~100px) */
 }
 
+/*선*/
 .line {
   width: 450px;
   height: 2px;
   background-color: black;
 }
 
+/*원*/
 .circle {
   width: 20px;
   height: 20px;
@@ -92,16 +97,6 @@ body {
   font-size: 40px;
   font-weight: 900;
   color: black;
-}
-
-/*History 이미지 아래 텍스트 영역*/
-.intro-text {
-  text-align: center;
-  padding: 100px 20px; /* 위아래 여백 */
-  font-size: 30px;
-  font-weight: 500;
-  line-height: 1.8;
-  color: #111;
 }
 
 /*세번째 배경이미지*/
@@ -186,6 +181,16 @@ body {
   /* 배경 이미지가 꽉 차게 */
   background-size: cover;
   background-position: center;
+}
+
+/*이미지 아래 텍스트 영역 디자인*/
+.intro-text {
+  text-align: center;
+  padding: 100px 20px; /* 위아래 여백 */
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.8;
+  color: #111;
 }
 
 .footprint-overlay {
