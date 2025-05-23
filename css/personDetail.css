@@ -1,3 +1,5 @@
+/* 공통 요소 리셋 */
+html,
 body,
 h1,
 h2,
@@ -6,7 +8,7 @@ ul,
 p,
 a {
   margin: 0;
-  padding: o;
+  padding: 0;
   box-sizing: border-box;
   text-decoration: none;
 }
@@ -144,31 +146,6 @@ a {
   opacity: 1;
 }
 
-/* ending main page up */
-
-/* starting main search center line */
-#main_search {
-  background-color: #35424a;
-  color: coral;
-
-  font-family: sans-serif;
-  padding: 10px 0;
-  display: inline-block;
-  width: 100%;
-}
-#main_search .left {
-  float: left;
-}
-
-#main_search .right {
-  float: right;
-}
-#main_search .input {
-  padding: 5px 200px;
-  color: black;
-  padding-left: 10px;
-}
-
 .button {
   padding: 6px 15px;
   border: none;
@@ -178,114 +155,79 @@ a {
   cursor: pointer;
   font-size: larger;
 }
-#main_search .button:hover {
-  color: burlywood;
+
+body {
+  background-color: #fefde9;
+  font-family: "Noto Sans KR", sans-serif;
 }
-/* ending main search center line */
 
-/* starting main page down */
-/* starting main page down img_slideshow */
+.container-center {
+  margin: 50px auto;
+  max-width: 800px;
+  text-align: center;
+}
 
-.slide img {
-  /* Rasmning konteynerga to'liq moslashishi */
+.container-center h2 {
+  font-weight: bold;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.subheading {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.highlight-desc {
+  background-color: #d6e7b9;
+  padding: 5px 10px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 400px;
   object-fit: cover;
+  margin-bottom: 20px;
 }
-.slideshow-container {
+
+.btn {
+  font-size: 16px;
+}
+
+.title-wrapper {
   position: relative;
-  width: 100%;
-  height: 600px;
-  margin: auto;
-  max-width: 1000px;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-bottom: 20px;
 }
-.slide {
+
+.back-btn {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  animation: fadeAnimation 36s infinite;
-}
-/* Faqat 1ta slayd 3.6s davomida ko‘rinadi, qolgan vaqtda yashirin bo‘ladi */
-@keyframes fadeAnimation {
-  0% {
-    opacity: 0;
-  }
-  5% {
-    opacity: 1;
-  }
-  10% {
-    opacity: 1;
-  }
-  15% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
+  left: 0;
+  top: 50%;
+  transform: translate(-300px, -50%);
+  font-size: 14px;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f9fa;
 }
 
-/* 10 ta slayd uchun delay (3.6s interval bilan) */
-.slide:nth-child(1) {
-  animation-delay: 0s;
-}
-.slide:nth-child(2) {
-  animation-delay: 3.6s;
-}
-.slide:nth-child(3) {
-  animation-delay: 7.2s;
-}
-.slide:nth-child(4) {
-  animation-delay: 10.8s;
-}
-.slide:nth-child(5) {
-  animation-delay: 14.4s;
-}
-.slide:nth-child(6) {
-  animation-delay: 18s;
-}
-.slide:nth-child(7) {
-  animation-delay: 21.6s;
-}
-.slide:nth-child(8) {
-  animation-delay: 25.2s;
-}
-.slide:nth-child(9) {
-  animation-delay: 28.8s;
-}
-.slide:nth-child(10) {
-  animation-delay: 32.4s;
-}
-/* ending main page down img_slideshow */
-
-/* starting main page down map */
-.container_map {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: 600px;
-  margin: auto;
-  max-width: 1000px;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
-/* ending main page down map */
-/* ending main page down */
-
-/* starting main page footer */
+/* starting team members page footer */
 footer {
   background-color: #35424a;
   color: #fff;
-  margin-top: 10px;
+  /* position: fixed; */
+  position: static;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
-
 .footer-container {
   width: 100%;
   margin: auto;
@@ -293,7 +235,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  font-size: x-large;
+  font-size: large;
 }
 
 .footer-column {
@@ -305,7 +247,7 @@ footer {
   display: flex;
   margin: 15px;
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
   color: coral;
 }
 
@@ -314,7 +256,7 @@ footer {
 }
 
 .footer-column ul li {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .footer-column ul li a {
@@ -324,16 +266,15 @@ footer {
 }
 
 .footer-column ul li a:hover {
-  color: #fff;
+  color: coral;
 }
 
 .footer-bottom {
   text-align: center;
   padding: 20px 0px 20px 0px;
   border-top: 1px solid coral;
-  margin-top: 30px;
+  margin-top: 10px;
   font-size: 14px;
-  color: white;
 }
 
 @media (max-width: 768px) {
@@ -346,5 +287,18 @@ footer {
     margin: 20px 0;
   }
 }
+/* ending team members page footer */
 
-/* ending main page footer */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+#map {
+  width: 80%;
+  height: 80vh;
+  margin: 50px auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}

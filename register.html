@@ -1,23 +1,62 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <title>회원가입 - Tripiary</title>
-  <link rel="stylesheet" href="./css/login_register.css" />
-</head>
-<body>
-  <div class="login-wrapper">
-    <h2>회원가입</h2>
-    <form method="post" action="서버의url" id="login-form">
-    <input type="email" placeholder="이메일" />
-    <input type="password" placeholder="비밀번호" /><br>
-    <input type="submit">가입하기</input>
-    <p style="margin-top: 10px;">
-      이미 계정이 있으신가요?
-      <a href="login.html">로그인</a>
-    </p>
-    <a href="main.html">← 메인으로</a>
-    </form>
-  </div>
-</body>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가입하기</title>
+    <link rel="stylesheet" href="../css/register.css" />
+    <!-- 이페이지는 회원가입 페이지예요 -->
+  </head>
+
+  <body>
+    <!-- starting signup page -->
+    <div class="signup-container">
+      <h2>가입하기</h2>
+      <form>
+        <div class="input-group">
+          <label for="fullname">당신의 이름</label>
+          <input
+            type="text"
+            id="fullname"
+            placeholder="이름을 입력하세요"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="email">이메일</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="이메일 입력하세요"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="username">사용자 이름</label>
+          <input
+            type="text"
+            id="username"
+            placeholder="사용자 이름을 입력하세요"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="password">비밀번호</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="비밀번호를 만드세요"
+            required
+          />
+        </div>
+        <button type="submit" class="signup-btn">가입</button>
+      </form>
+      <div class="footer">
+        <a href="main.html">홈</a>
+        이미 계정이 있으신가요?
+        <a href="login.html">로그인</a>
+      </div>
+    </div>
+    <!-- ending signup page -->
+  </body>
 </html>

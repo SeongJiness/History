@@ -9,107 +9,168 @@ body {
   color: #333;
 }
 
+/* 공통 요소 리셋 */
+html,
+body,
+h1,
+h2,
+h3,
+ul,
+p,
 a {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   text-decoration: none;
 }
 
-/* ===== 공통 클래스 ===== */
-.custom-link {
+/* starting main_container */
+.main_container {
+  /* background-color: #fff; */
+  /* background-color: red; */
+  background-color: #fffff0ab;
+  /* background-color: white; */
+}
+/* ending main_container */
+
+/* starting main nawbar */
+#header {
+  background-color: #35424a;
+}
+#header h1 {
+  color: #fff;
+  font-family: sans-serif;
+  padding: 15px 0;
+  display: inline-block;
+}
+#header .logo {
+  color: coral;
+}
+.nawbar {
+  float: right;
+}
+.nawbar li {
+  display: inline;
+}
+.nawbar li a {
   text-decoration: none;
-  color: black;
-  font-weight: bold;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  width: auto;
+  color: #fff;
+  font-family: sans-serif;
+  padding: 25px 15px;
+  display: inline-block;
 }
-
-.btn-custom {
-  background-color: #c56a00;
-  color: white;
-  border-radius: 30px;
-  padding: 10px 30px;
-  font-weight: bold;
-  border: none;
+.nawbar li a:hover {
+  color: burlywood;
 }
-
-/* ===== 메인 화면 ===== */
 .container {
   width: 90%;
-  margin: 0 auto;
+  margin: auto;
+}
+/* starting signup-login */
+.signup {
+  background-color: coral;
+  padding: 13px;
+  border-radius: 10px;
+  font-size: larger;
+  margin: 5px;
+}
+.login {
+  background-color: coral;
+  padding: 13px 20px 13px 20px;
+  border-radius: 10px;
+  font-size: larger;
+}
+/* ending signup-login */
+/* endting main nawbar */
+
+/* starting main page up */
+.main_up_body {
+  margin: 0;
+  padding: 0;
+  font-family: "Apple SD Gothic Neo", sans-serif;
+  /* background-color: #f9f9ed; */
+  /* background-color: red; */
+  color: #5a2a00;
 }
 
-.main {
+.main_up_container {
+  /* background-color: green; */
+  width: 1200px;
+  height: 500px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: calc(100vh - 80px);
+  padding: 60px 90px;
+  gap: 40px;
 }
 
-.left {
-  width: 60%;
-  padding: 20px 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.main_up_text-section {
+  max-width: 50%;
 }
 
-.text h5 {
-  color: #55682f;
+.main_up_subtitle {
   font-size: 14px;
-  letter-spacing: 1px;
+  color: #6c7a4f;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
 }
 
-.text h2 {
-  color: #884513;
-  font-size: 2rem;
-}
-
-.text p {
-  line-height: 1.6;
-  font-size: 16px;
-}
-
-/* ===== 상단 메뉴바 ===== */
-.menubar {
-  width: 500%;
-  display: flex;
-  justify-content: center;
-}
-
-.menubar ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.menubar ul li a {
+.main_up_title {
+  font-size: 32px;
   font-weight: bold;
-  color: #884513;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.main_up_description {
   font-size: 18px;
-  transition: color 0.2s;
+  color: #444;
+  line-height: 1.6;
 }
 
-.menubar ul li a:hover {
-  color: #884513;
+.main_up_image-section {
+  position: relative;
+  width: 600px;
+  /* width: 50%; */
+  height: 400px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.center-nav {
+.main_up_carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.main_up_carousel-image {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  font-size: 18px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.main_up_carousel-image.main_up_active {
+  opacity: 1;
+}
+
+.button {
+  padding: 6px 15px;
+  border: none;
+  background-color: coral;
+  color: #fff;
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: larger;
 }
 
 /* ===== 사이드 메뉴 (토글 메뉴) ===== */
 .menu-container {
   position: fixed;
-  top: 50px;
+  top: 80px;
   left: 0;
   width: 200px;
   height: 100vh;
@@ -172,4 +233,89 @@ a {
 .menu-container.open + .arrow-button {
   left: 200px;
   transform: translate(-40%, -50%) rotate(180deg);
+}
+
+/* starting team members page footer */
+footer {
+  background-color: #35424a;
+  color: #fff;
+  /* position: fixed; */
+  position: static;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.footer-container {
+  width: 100%;
+  margin: auto;
+  padding-left: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: large;
+}
+
+.footer-column {
+  flex: 1;
+}
+
+.footer-column h3 {
+  padding-left: 23px;
+  display: flex;
+  margin: 15px;
+  text-align: center;
+  font-size: 20px;
+  color: coral;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 5px;
+}
+
+.footer-column ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: coral;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0px 20px 0px;
+  border-top: 1px solid coral;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-column {
+    margin: 20px 0;
+  }
+}
+/* ending team members page footer */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+#map {
+  width: 80%;
+  height: 80vh;
+  margin: 50px auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
 }

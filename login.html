@@ -1,23 +1,44 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <title>로그인 - Tripiary</title>
-  <link rel="stylesheet" href="./css/login_register.css" />
-</head>
-<body>
-  <div class="login-wrapper">
-    <h2>Login</h2>
-    <form method="post" action="서버의url" id="login-form">
-     <input type="email" placeholder="이메일" /><br>
-     <input type="password" placeholder="비밀번호" /><br>
-      <input type="submit" value="로그인"></input>
-     <p style="margin-top: 10px;">
-      계정이 없으신가요?
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인</title>
+    <link rel="stylesheet" href="./css/login.css" />
+    <!-- 이페이지는 로그인 페이지예요 -->
+  </head>
+
+  <body>
+    <!-- starting login page -->
+    <div class="login-container">
+      <h2>계정에 로그인</h2>
+      <form>
+        <div class="input-group">
+          <label for="username">사용자 이름</label>
+          <input
+            type="text"
+            id="username"
+            placeholder="이름을 입력하세요"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="password">비밀번호</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="비밀번호를 입력하세요"
+            required
+          />
+        </div>
+        <button type="submit" class="login-btn">로그인</button>
+      </form>
+      <div class="footer">
+        <a href="main.html">홈</a>
+        계정이 없으신가요?
         <a href="register.html">회원가입</a>
-     </p>
-     <a href="main.html">← 메인으로</a>
-    </form>
-  </div>
-</body>
+      </div>
+    </div>
+    <!-- starting login page -->
+  </body>
 </html>

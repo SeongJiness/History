@@ -1,0 +1,178 @@
+/* 이페이지는 팀원들 페이지예요 */
+body,
+h1,
+h2,
+h3,
+ul,
+p,
+a {
+  margin: 0;
+  padding: o;
+  text-decoration: none;
+}
+
+/* starting team members nawbar */
+#header {
+  background-color: #35424a;
+}
+#header h1 {
+  color: #fff;
+  font-family: sans-serif;
+  padding: 15px 0;
+  display: inline-block;
+}
+#header .logo {
+  color: coral;
+}
+.nawbar {
+  float: right;
+}
+.nawbar li {
+  display: inline;
+}
+.nawbar li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: sans-serif;
+  padding: 25px 15px;
+  display: inline-block;
+}
+.nawbar li a:hover {
+  color: burlywood;
+}
+.container {
+  width: 90%;
+  margin: auto;
+}
+/* ending team members nawbar */
+
+/* starting team members page main window */
+.team_members_page_body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+}
+
+.team_members_main_page_container {
+  max-width: 800px;
+  margin: auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.team_members_main_page_employee-card {
+  display: flex;
+  align-items: center;
+  background-color: #eef2f3;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+.team_members_main_page_employee-card img {
+  width: 100px; /* Enini belgilaymiz */
+  height: 100px; /* Bo'yini belgilaymiz */
+  object-fit: cover; /* Rasmning nisbatini buzmasdan joylashtiradi */
+  border-radius: 50%; /* Dumaloq rasm uchun */
+  margin-right: 20px;
+}
+
+.team_members_main_page_employee-card:hover {
+  background-color: #dce3e6;
+}
+
+.team_members_main_page_employee-card img {
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.team_members_main_page_info h2 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.team_members_main_page_info p {
+  margin: 5px 0 0;
+  color: #555;
+}
+/* ending team members page main window */
+
+/* starting team members page footer */
+footer {
+  background-color: #35424a;
+  color: #fff;
+  /* position: fixed; */
+  position: static;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.footer-container {
+  width: 100%;
+  margin: auto;
+  padding-left: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: large;
+}
+
+.footer-column {
+  flex: 1;
+}
+
+.footer-column h3 {
+  padding-left: 23px;
+  display: flex;
+  margin: 15px;
+  text-align: center;
+  font-size: 20px;
+  color: coral;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 5px;
+}
+
+.footer-column ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: coral;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0px 20px 0px;
+  border-top: 1px solid coral;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-column {
+    margin: 20px 0;
+  }
+}
+/* ending team members page footer */

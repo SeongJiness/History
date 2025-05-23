@@ -103,7 +103,7 @@ function addMarkers(places) {
         currentMarker = null;
       } else {
         var content =
-          '<div style="padding:10px; width:250px; height:300px;">' +
+          '<div style="padding:10px; width:250px; height:330px;">' +
           "<strong>" +
           place.name +
           "</strong><br>" +
@@ -112,7 +112,15 @@ function addMarkers(places) {
           '" style="width:100%; height:auto; max-height:150px; margin-top:5px;"><br>' +
           "<p style='margin-top:5px;'>" +
           place.desc +
-          "</p></div>";
+          "</p>" +
+          '<a href="personDetail.html?name=' +
+          encodeURIComponent(place.name) +
+          "&img=" +
+          encodeURIComponent(place.img) +
+          "&desc=" +
+          encodeURIComponent(place.desc) +
+          '" style="color:black; display:block; margin-top:10px; text-decoration:none;">>> 자세히 보기</a>' +
+          "</div>";
 
         infowindow.setContent(content);
         infowindow.open(map, marker);
