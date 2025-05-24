@@ -5,48 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>역사의 발자취</title>
     <link rel="stylesheet" href="/css/main.css" />
-
-    <script src="script.js"></script>
+    <script src="/js/script.js" defer></script>
   </head>
 
   <body>
     <!-- starting main container -->
-    <div class="main_container">
-      <!-- starting main nawbar -->
-      <div id="header">
-        <div class="container">
-          <h1 style="margin-right: 25px">
-            <a href="main.html" class="logo">역사의 발자취</a>
-            History Master
-          </h1>
-          <input class="input" type="type text" placeholder="Search..." />
-          <button class="button">Search</button>
-          <ul class="nawbar">
-            <li>
-              <a href="main.html">홈</a>
-            </li>
-            <li>
-              <a href="introduction.html">사이트 소개</a>
-            </li>
-            <li>
-              <a href="#">게시판</a>
-            </li>
-            <li>
-              <a href="/route/person.html">위인</a>
-            </li>
-            <li>
-              <a href="region.html">지역</a>
-            </li>
-            <li class="signup">
-              <a href="register.html">회원가입</a>
-            </li>
-            <li class="login">
-              <a href="login.html">로그인</a>
-            </li>
-          </ul>
-        </div>
+    <div id="header">
+      <div class="container">
+        <h1 style="margin-right: 25px">
+          <a href="/main.html" class="logo">
+            <img src="/Images/로고.png" alt="로고" class="logo-img" />
+            역사의 발자취
+          </a>
+        </h1>
+        <input class="input" type="text" placeholder="Search..." />
+        <button class="button">Search</button>
+        <ul class="nawbar">
+          <li><a href="/main.html">홈</a></li>
+          <li><a href="/introduction.html">사이트 소개</a></li>
+          <li><a href="#">게시판</a></li>
+          <li><a href="/route/person.html">위인</a></li>
+          <li><a href="/region.html">지역</a></li>
+          <li class="signup"><a href="/register.html">회원가입</a></li>
+          <li class="login"><a href="/login.html">로그인</a></li>
+        </ul>
       </div>
-      <!-- ending main nawbar -->
+    </div>
 
       <!-- starnig main page up -->
       <div class="main_up_body">
@@ -123,8 +107,106 @@
       <br />
 
       <!-- starting main page down  -->
+
+      <!--starting course section-->
+      <section class="course-section">
+        <h2 class="course-title">📍 추천 탐방 코스</h2>
+          <div class="course-grid">
+              <div class="course-card">
+              <img src="../Images/세종대왕.jpg" alt="세종대왕 코스" class="course-img">
+              <div class="course-content">
+                <h3 class="course-name">세종대왕의 길</h3>
+                <p class="course-desc">한글 창제와 집현전의 흔적을 따라 떠나는 경복궁 중심의 탐방 코스.</p>
+                <a href="person.html" class="course-btn">코스 보기</a>
+              </div>
+            </div>
+            <div class="course-card">
+              <img src="../Images/유관순.jpg" alt="유관순 코스" class="course-img">
+              <div class="course-content">
+                <h3 class="course-name">유관순 열사의 발자취</h3>
+                <p class="course-desc">3.1운동의 현장을 따라가는 천안 중심의 코스입니다.</p>
+                <a href="person.html" class="course-btn">코스 보기</a>
+              </div>
+            </div>
+            <div class="course-card">
+              <img src="../Images/안중근.jpg" alt="안중근 코스" class="course-img">
+              <div class="course-content">
+                <h3 class="course-name">안중근의 의거</h3>
+                  <p class="course-desc">안중근 의사의 독립운동 여정을 재조명하는 여순 중심 코스.</p>
+                  <a href="/route/person.html" class="course-btn">코스 보기</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!--ending course section-->
+
+
+        <!-- starting review section -->
+        <section class="review-section">
+          <h2 class="review-title">💬 사용자들의 실제후기</h2>
+            <div class="review-slider-wrapper">
+              <div class="review-slider">
+                  <div class="review-card">
+                    <img src="../Images/review.png" alt="김유정" class="review-avatar">
+                    <div class="review-content">
+                      <p class="review-text">위인들의 여정을 이렇게 멋지게 따라갈 수 있다니 감동이었어요.</p>
+                      <span class="review-user">김유정 · 서울</span>
+                    </div>
+                  </div>
+                  <div class="review-card">
+                    <img src="../Images/review.png" alt="최지훈" class="review-avatar">
+                    <div class="review-content">
+                      <p class="review-text">가족과 함께 역사 여행을 계획할 수 있어 좋았어요.</p>
+                      <span class="review-user">최지훈 · 부산</span>
+                    </div>
+                  </div>
+                  <div class="review-card">
+                    <img src="../Images/review.png" alt="박서연" class="review-avatar">
+                    <div class="review-content">
+                      <p class="review-text">디자인도 깔끔하고 지도 기능이 특히 유용했어요!</p>
+                      <span class="review-user">박서연 · 인천</span>
+                    </div>
+                  </div>
+                  <div class="review-card">
+                    <img src="../Images/review.png" alt="이민수" class="review-avatar">
+                    <div class="review-content">
+                      <p class="review-text">아이들과 함께 보기에도 좋은 콘텐츠였어요.</p>
+                      <span class="review-user">이민수 · 대전</span>
+                    </div>
+                  </div>
+                  <div class="review-card">
+                    <img src="../Images/review.png" alt="정윤아" class="review-avatar">
+                    <div class="review-content">
+                      <p class="review-text">스토리 중심 설명이 흥미로웠고 사진도 멋졌어요.</p>
+                      <span class="review-user">정윤아 · 강릉</span>
+                    </div>
+                  </div>
+                  <div class="review-card">
+                    <img src="../Images/review.png" alt="조현우" class="review-avatar">
+                    <div class="review-content">
+                      <p class="review-text">전시관과 연계된 정보가 특히 마음에 들었어요.</p>
+                      <span class="review-user">조현우 · 광주</span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </section>
+
+
+        <br />
+        <br />
+        <!--ending review section-->
+      
+
+
       <!-- starting main page down img_slideshow -->
-      <div class="slideshow-container">
+      <!-- <div class="slideshow-container">
         <div class="slide">
           <img src="../Images/1.jpg" alt="Rasim 1" />
         </div>
@@ -155,7 +237,7 @@
         <div class="slide">
           <img src="../Images/10.webp" alt="Rasim 10" />
         </div>
-      </div>
+      </div> -->
       <!-- ending main page down img_slideshow -->
 
       <br />
@@ -211,5 +293,7 @@
       <!-- endig main page footer -->
     </div>
     <!-- ending main container -->
+
+    
   </body>
 </html>

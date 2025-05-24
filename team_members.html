@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>팀원들</title>
     <link rel="stylesheet" href="./css/team_members.css" />
+    <!--main.css 에서 공통부분 가져오기-->
+    <link rel="stylesheet" href="./css/main.css" />
     <!-- 이페이지는 팀원들 페이지예요 -->
   </head>
 
@@ -12,38 +14,28 @@
     <!-- starting team members page nawbar -->
     <!-- starting main container -->
     <div class="main_container">
-      <!-- starting main nawbar -->
-      <div id="header">
-        <div class="container">
-          <h1>
-            <a href="main.html" class="logo">역사의 발자취</a>
-            History Master
-          </h1>
-          <ul class="nawbar">
-            <li>
-              <a href="main.html">홈</a>
-            </li>
-            <li>
-              <a href="introduction.html">사이트 소개</a>
-            </li>
-            <li>
-              <a href="#">게시판</a>
-            </li>
-            <li>
-              <a href="/route/person.html">위인</a>
-            </li>
-            <li>
-              <a href="region.html">지역</a>
-            </li>
-            <li class="signup">
-              <a href="register.html">회원가입</a>
-            </li>
-            <li class="login">
-              <a href="login.html">로그인</a>
-            </li>
-          </ul>
-        </div>
+      <!-- starting main container -->
+    <div id="header">
+      <div class="container">
+        <h1 style="margin-right: 25px">
+          <a href="/main.html" class="logo">
+            <img src="/Images/로고.png" alt="로고" class="logo-img" />
+            역사의 발자취
+          </a>
+        </h1>
+        <input class="input" type="text" placeholder="Search..." />
+        <button class="button">Search</button>
+        <ul class="nawbar">
+          <li><a href="/main.html">홈</a></li>
+          <li><a href="/introduction.html">사이트 소개</a></li>
+          <li><a href="#">게시판</a></li>
+          <li><a href="/route/person.html">위인</a></li>
+          <li><a href="/region.html">지역</a></li>
+          <li class="signup"><a href="/register.html">회원가입</a></li>
+          <li class="login"><a href="/login.html">로그인</a></li>
+        </ul>
       </div>
+    </div>
     </div>
     <!-- ending team members page nawbar -->
 

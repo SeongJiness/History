@@ -23,27 +23,50 @@ a {
 /* ending main_container */
 
 /* starting main nawbar */
+
+
+.logo-img{
+  height: 60px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.logo-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #5c4033;
+  font-family: sans-serif;
+}
+
 #header {
-  background-color: #35424a;
+  background-color: 	#ede1d1;
 }
 #header h1 {
-  color: #fff;
+  color: #5c4033;
+  font-weight: bold;
   font-family: sans-serif;
   padding: 15px 0;
   display: inline-block;
 }
 #header .logo {
-  color: coral;
+  color: rgb(103, 70, 57);
 }
 .nawbar {
   float: right;
 }
 .nawbar li {
   display: inline;
+  font-weight: 600;
 }
 .nawbar li a {
   text-decoration: none;
-  color: #fff;
+  color: #5c4033;
   font-family: sans-serif;
   padding: 25px 15px;
   display: inline-block;
@@ -54,20 +77,6 @@ a {
 .container {
   width: 90%;
   margin: auto;
-}
-/* starting signup-login */
-.signup {
-  background-color: coral;
-  padding: 13px;
-  border-radius: 10px;
-  font-size: larger;
-  margin: 5px;
-}
-.login {
-  background-color: coral;
-  padding: 13px 20px 13px 20px;
-  border-radius: 10px;
-  font-size: larger;
 }
 /* ending signup-login */
 /* endting main nawbar */

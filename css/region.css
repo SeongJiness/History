@@ -1,169 +1,3 @@
-/* 공통 요소 리셋 */
-html,
-body,
-h1,
-h2,
-h3,
-ul,
-p,
-a {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-}
-
-/* starting main_container */
-.main_container {
-  /* background-color: #fff; */
-  /* background-color: red; */
-  background-color: #fffff0ab;
-  /* background-color: white; */
-}
-/* ending main_container */
-
-/* starting main nawbar */
-#header {
-  background-color: #35424a;
-}
-#header h1 {
-  color: #fff;
-  font-family: sans-serif;
-  padding: 15px 0;
-  display: inline-block;
-}
-#header .logo {
-  color: coral;
-}
-.nawbar {
-  float: right;
-}
-.nawbar li {
-  display: inline;
-}
-.nawbar li a {
-  text-decoration: none;
-  color: #fff;
-  font-family: sans-serif;
-  padding: 25px 15px;
-  display: inline-block;
-}
-.nawbar li a:hover {
-  color: burlywood;
-}
-.container {
-  width: 90%;
-  margin: auto;
-}
-/* starting signup-login */
-.signup {
-  background-color: coral;
-  padding: 13px;
-  border-radius: 10px;
-  font-size: larger;
-  margin: 5px;
-}
-.login {
-  background-color: coral;
-  padding: 13px 20px 13px 20px;
-  border-radius: 10px;
-  font-size: larger;
-}
-/* ending signup-login */
-/* endting main nawbar */
-
-/* starting main page up */
-.main_up_body {
-  margin: 0;
-  padding: 0;
-  font-family: "Apple SD Gothic Neo", sans-serif;
-  /* background-color: #f9f9ed; */
-  /* background-color: red; */
-  color: #5a2a00;
-}
-
-.main_up_container {
-  /* background-color: green; */
-  width: 1200px;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 60px 90px;
-  gap: 40px;
-}
-
-.main_up_text-section {
-  max-width: 50%;
-}
-
-.main_up_subtitle {
-  font-size: 14px;
-  color: #6c7a4f;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
-
-.main_up_title {
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  line-height: 1.5;
-}
-
-.main_up_description {
-  font-size: 18px;
-  color: #444;
-  line-height: 1.6;
-}
-
-.main_up_image-section {
-  position: relative;
-  width: 600px;
-  /* width: 50%; */
-  height: 400px;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.main_up_carousel {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.main_up_carousel-image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.main_up_carousel-image.main_up_active {
-  opacity: 1;
-}
-
-.button {
-  padding: 6px 15px;
-  border: none;
-  background-color: coral;
-  color: #fff;
-  margin-left: 5px;
-  cursor: pointer;
-  font-size: larger;
-}
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: sans-serif;
-  background-color: #fffff0;
-}
-
 /* ===== 사이드 메뉴 (토글 메뉴) ===== */
 .menu-container {
   position: fixed;
@@ -319,3 +153,32 @@ footer {
   border: 2px solid #ccc;
   border-radius: 10px;
 }
+
+
+/* 지역 선택하라는 문구 */
+.person-guide {
+  background-color: #fef5e7;
+  border: 2px solid #e0c5a1;
+  padding: 16px 24px;
+  margin: 30px auto 20px auto;
+  width: fit-content;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #5c4033;
+  font-family: "Nanum Gothic", sans-serif;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  animation: fadeIn 1s ease-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 지역 선택하라는 문구 끝 */

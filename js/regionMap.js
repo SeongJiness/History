@@ -78,16 +78,23 @@ function addMarkers(places) {
         currentMarker = null;
       } else {
         var content =
-          '<div style="padding:10px; width:250px; height:300px;">' +
-          "<strong>" +
-          place.name +
-          "</strong><br>" +
-          '<img src="' +
-          place.img +
-          '" style="width:100%; height:auto; max-height:150px; margin-top:5px;"><br>' +
-          "<p style='margin-top:5px;'>" +
-          place.desc +
-          "</p></div>";
+          '<div style="padding:10px; width:250px; height:330px; background:#fffaf3; border:2px solid #e0c5a1; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2); font-family:\'Nanum Gothic\', sans-serif; display:flex; flex-direction:column; justify-content:space-between;">' +
+            "<div>" +
+              "<strong style='font-size:16px; color:#5c4033;'>" + place.name + "</strong><br>" +
+              '<img src="' + place.img + '" style="width:100%; height:auto; max-height:150px; margin-top:5px; border-radius:6px;"><br>' +
+              "<p style='margin-top:5px; font-size:14px; color:#555;'>" + place.desc + "</p>" +
+            "</div>" +
+            '<div style="text-align:right; margin-top:10px;">' +
+              '<a href="personDetail.html?name=' +
+              encodeURIComponent(place.name) +
+              "&img=" +
+              encodeURIComponent(place.img) +
+              "&desc=" +
+              encodeURIComponent(place.desc) +
+              '" style="color:#fff; background-color:#8b5e3c; padding:6px 10px; border-radius:6px; text-decoration:none; font-size:13px;">>> 자세히 보기</a>' +
+            "</div>" +
+          "</div>";
+
 
         infowindow.setContent(content);
         infowindow.open(map, marker);
