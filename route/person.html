@@ -28,9 +28,7 @@
     <!--css적용-->
     <link rel="stylesheet" href="/css/person.css" />
     <!--main.css 에서 공통부분 가져오기-->
-    <link rel="stylesheet" href="/css/main.css">
-
-
+    <link rel="stylesheet" href="/css/main.css" />
 
     <!--카카오 지도 API-->
     <script
@@ -40,62 +38,58 @@
 
     <!--위인 지도 js파일-->
     <script src="/js/personMap.js"></script>
-
-    <!--왼쪽 사이드 메뉴 js파일-->
-    <script src="/js/leftSideMenu.js"></script>
   </head>
   <body>
-    <div>
-      <!--부트스트랩-->
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"
-      ></script>
-      <!--jquery를 이용한 슬라이드-->
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-      <!--카카오 지도 API-->
-      <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=9c9fb588b9138bcbd0cd56120ecc523d&libraries=services"></script>
+    <!--부트스트랩-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--카카오 지도 API-->
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=9c9fb588b9138bcbd0cd56120ecc523d&libraries=services"></script>
 
-      <!-- starting team members page nawbar -->
-      <!-- starting main container -->
-      <div id="header">
-        <div class="container">
-          <h1 style="margin-right: 25px">
-            <a href="/main.html" class="logo">
-              <img src="/Images/로고.png" alt="로고" class="logo-img" />
-              역사의 발자취
-            </a>
-          </h1>
-          <input class="input" type="text" placeholder="Search..." />
-          <button class="button">Search</button>
-          <ul class="nawbar">
-            <li><a href="/main.html">홈</a></li>
-            <li><a href="/introduction.html">사이트 소개</a></li>
-            <li><a href="#">게시판</a></li>
-            <li><a href="/route/person.html">위인</a></li>
-            <li><a href="/region.html">지역</a></li>
-            <li class="signup"><a href="/register.html">회원가입</a></li>
-            <li class="login"><a href="/login.html">로그인</a></li>
-          </ul>
-        </div>
+    <!-- starting team members page nawbar -->
+    <!-- starting main container -->
+    <div id="header">
+      <div class="container">
+        <h1 style="margin-right: 25px">
+          <a href="/main.html" class="logo">
+            <img src="/Images/로고.png" alt="로고" class="logo-img" />
+            역사의 발자취
+          </a>
+        </h1>
+        <input class="input" type="text" placeholder="Search..." />
+        <button class="button">Search</button>
+        <ul class="nawbar">
+          <li><a href="/main.html">홈</a></li>
+          <li><a href="/introduction.html">사이트 소개</a></li>
+          <li><a href="#">게시판</a></li>
+          <li><a href="/route/person.html">위인</a></li>
+          <li><a href="/region.html">지역</a></li>
+          <li class="signup"><a href="/register.html">회원가입</a></li>
+          <li class="login"><a href="/login.html">로그인</a></li>
+        </ul>
       </div>
+    </div>
 
-      <div class="person-guide">
-        발자취를 따라 걷고 싶은 위인을 선택해보세요
-      </div>
+    <div class="person-guide">발자취를 따라 걷고 싶은 위인을 선택해보세요</div>
 
-    <!--왼쪽 사이드 메뉴-->
-    <div class="menu-container" id="menu">
-      <div class="menu-title">위인</div>
-      <a href="javascript:void(0)" class="menu-item" onclick="loadMap('you')"
+    <div class="menu-title">위인 선택</div>
+
+    <div class="menu-container">
+      <a href="javascript:void(0)" class="menu-item" onclick="loadMap('you', 1)"
         >유관순</a
       >
-      <a href="javascript:void(0)" class="menu-item" onclick="loadMap('lee')"
+      <a href="javascript:void(0)" class="menu-item" onclick="loadMap('lee', 1)"
         >이순신</a
       >
     </div>
-    <div class="arrow-button" id="toggleBtn">▶</div>
+
+    <!-- 지도 위 버튼 -->
+    <div class="map-buttons">
+      <button onclick="loadMap(currentPerson, 1)">추천 경로 1</button>
+      <button onclick="loadMap(currentPerson, 2)">추천 경로 2</button>
+    </div>
 
     <!--카카오 지도 배치-->
     <div id="map"></div>
