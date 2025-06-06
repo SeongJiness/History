@@ -1,6 +1,7 @@
 var map;
 var infowindow;
 var markers = [];
+var labels = []; // ✅ CustomOverlay 추적을 위한 배열
 var polyline = null;
 
 // 유관순 관련 장소
@@ -135,8 +136,8 @@ const leeRoute2 = [
 // 마커 생성 함수 - 아이콘 구분
 function createMarker(place, isFood = false) {
   let markerImageUrl = isFood
-    ? "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png" // 음식점/카페 빨간 마커
-    : "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; // 관광지 노란 별 마커
+    ? "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png"
+    : "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
 
   const markerImage = new kakao.maps.MarkerImage(
     markerImageUrl,
@@ -147,6 +148,17 @@ function createMarker(place, isFood = false) {
     map: map,
     position: place.latLng,
     image: markerImage,
+  });
+
+  // ✅ 장소 이름을 항상 띄우는 CustomOverlay 추가
+  const label = new kakao.maps.CustomOverlay({
+    map: map,
+    position: place.latLng,
+    content:
+      '<div style="background: rgba(255,255,255,0.9); border:1px solid #888; padding:2px 6px; border-radius:4px; font-size:13px; font-weight:bold; color:#333; white-space:nowrap;">' +
+      place.name +
+      "</div>",
+    yAnchor: 1.7,
   });
 
   kakao.maps.event.addListener(marker, "click", function () {
@@ -182,14 +194,21 @@ function createMarker(place, isFood = false) {
   });
 
   markers.push(marker);
+  labels.push(label); // ✅ CustomOverlay 추적
 }
 
-// 마커, 인포윈도우, 경로 초기화
+// 마커, 오버레이, 경로 초기화
 function clearMarkers() {
   for (let marker of markers) {
     marker.setMap(null);
   }
   markers = [];
+
+  for (let label of labels) {
+    label.setMap(null); // ✅ CustomOverlay 제거
+  }
+  labels = [];
+
   if (infowindow) infowindow.close();
 
   if (polyline) {
